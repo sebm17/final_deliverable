@@ -4,15 +4,14 @@ import { useB1FileInput } from "../B1Context";
 function isInputValid(inputType, inputText) {
   switch (inputType) {
     case "mpan":
-        return inputText && inputText.match(/[0-9]{13}/);
     case "mprn":
-      return !inputText || inputText && inputText.match(/[0-9]{10}/);
+      return inputText && inputText.match(/[0-9]{10}/);
     case "jad":
-      // jad is a date field, if the date input is greater than today its valid
-      return inputText && true && new Date(inputText).getTime() > Date.now();
+      // jad is a date field, always assume if there's input here then it's valid
+      return inputText && true;
     case "jtc":
-      // jtc is a CHAR field of a maximum length of 3
-      return inputText && inputText.match(/[a-zA-Z]{3}/);
+      // come up with some validation rule for this
+      return inputText && true;
     default:
       return false;
   }
@@ -57,7 +56,7 @@ export const AddB1 = () => {
 
   return (
     <div className="ui main">
-      <h1 className="ui header teal">Input B1 data</h1>
+      <h1 className="title">Input B1 data</h1>
       <form className="ui form">
         <div className="field">
           <label>MPAN</label>
@@ -118,11 +117,11 @@ export const AddB1 = () => {
       <button
         disabled={canSubmit}
         onClick={onClickProcess}
-        className="ui button teal"
+        className="ui button blue"
       >
         Process B1 file
       </button>
-      <button className="ui button red" onClick={onClickReset}>
+      <button className="ui button grey" onClick={onClickReset}>
         Reset
       </button>
     </div>

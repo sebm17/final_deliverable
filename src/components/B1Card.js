@@ -25,16 +25,16 @@ export const B1Card = ({ b1File: { id, mpan, mprn, jad, jtc } }) => {
         <div className="header">{id}</div>
         <>
           <div>
-            <b>MPAN</b>: {mpan}
+            <b>mprn</b>: {mprn}
           </div>
           <div>
-            <b>MPRN</b>: {mprn}
+            <b>mpan</b>: {mpan}
           </div>
           <div>
-            <b>Job Appointment Date</b>: {jad}
+            <b>job appointment date</b>: {jad}
           </div>
           <div>
-            <b>Job Type Code</b>: {jtc}
+            <b>job type code</b>: {jtc}
           </div>
         </>
       </div>

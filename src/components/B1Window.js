@@ -1,5 +1,5 @@
-import React from "react";
-import { fetchBSmart, fetchM98 } from "../data";
+import React, { useCallback } from "react";
+import { fetchBSmart, fetchM98, generateB1File } from "../data";
 
 function printInfo(data) {
   const entries = Object.entries(data).reduce((acc, [title, value]) => {
@@ -28,12 +28,31 @@ export const B1Window = ({ selectedInput }) => {
   const bSmartData = fetchBSmart(selectedInput);
   const m98Data = fetchM98(selectedInput);
 
+  const downloadURL = URL.createObjectURL(
+    generateB1File({
+      ...selectedInput,
+      ...bSmartData,
+      ...m98Data,
+      elecSerialNumber: bSmartData.serialNumber,
+      gasSerialNumber: m98Data.serialNumber
+    })
+  );
+
   return (
-    <div className="b1Window">
-      <h1>Electricity</h1>
-      {printInfo(m98Data)}
-      <h1>Gas</h1>
-      {printInfo(bSmartData)}
+    <div className="b1Window three column row">
+      <div className="column">
+        <h1>Electricity</h1>
+        {printInfo(m98Data)}
+      </div>
+      <div className="column">
+        <h1>Gas</h1>
+        {printInfo(bSmartData)}
+      </div>
+      <div className="column">
+        <a href={downloadURL} download={"B1.csv"}>
+          <button className="downloadButton ui button green">Download</button>
+        </a>
+      </div>
     </div>
   );
 };

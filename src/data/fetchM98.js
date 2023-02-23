@@ -11,6 +11,6 @@ export function fetchM98(b1Input) {
     appointmentId: electricData?.appointment.id,
     roleCode: electricData?.appointment.roleCode,
     serialNumber: electricData?.device.serialNumber,
-    admType: electricData?.device.admType
+    meterOperatingMode: electricData?.device.admType
   };
 }
