@@ -1,0 +1,28 @@
+.b1Window {
+  background: rgb(95, 244, 229);
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.inputList {
+  max-height: 300px;
+  overflow: auto;
+}
+
+.b1Card:hover {
+  background-color: #00fbde;
+  transition: 0.7s;
+}
+
+.selectedCard {
+  background-color: rgb(97, 186, 228);
+}
+
+input.error {
+  background-color: red !important;
+}
+
+input:focus {
+  background-color: lightblue !important;
+}
