@@ -8,7 +8,7 @@ export const B1List = (props) => {
 
   return (
     <>
-      <h1>Previous files</h1>
+      <h1 className ="ui header teal">Previous files</h1>
       <div className="ui celled list inputList">{renderB1List}</div>
     </>
   );
