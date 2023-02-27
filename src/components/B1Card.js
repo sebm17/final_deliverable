@@ -20,7 +20,7 @@ export const B1Card = ({ b1File: { id, mpan, mprn, jad, jtc } }) => {
   }, [id, selectedInputId]);
 
   return (
-    <div className={cardStyles} onClick={onCardClick}>
+    <div data-testid={"card"} className={cardStyles} onClick={onCardClick}>
       <div className="content">
         <div className="header">{id}</div>
         <>
@@ -39,6 +39,7 @@ export const B1Card = ({ b1File: { id, mpan, mprn, jad, jtc } }) => {
         </>
       </div>
       <i
+        data-testid={"bin"}
         onClick={onBinClick}
         className="trash alternate outline icon"
         style={{ color: "red", marginTop: "7px" }}

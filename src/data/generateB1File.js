@@ -13,7 +13,7 @@ export function generateB1File({
 }) {
   const csvContent = `
 HEADR,B0001,SCP,SUP,sms,MOA,20210511,113022,PN000001,PRDCT,24,1,,,,,,,,,,,,,,
-TRANS,SM0000000004,SMMS-000000000000000000000000000000000000000000004,SIEMSPOWMO,${jtc},RDS3,REQST,,,,,,,,,,,,,,,,D,SMCUST000004,N,1
+TRANS,SM0000000004,SMMS-000000000000000000000000000000000000000000004,SIEMSPOWMO,${jtc},RDS3,REQST,,,,,,,,,,,,,,,,D,PMCUST000004,N,1
 EMTPNT,${mpan},P,393,,,,,,,,,,,,,,,,,,,,,,
 ASSET,REMVE,EMETER,1C-23-4F-00-00-04-1E-FA,${elecSerialNumber},2.4,,D,sfwfwffw,,SPOW,,,,Additional Elec Asset info,,,,,,,,,,,
 EMETER,S2AD,${meterOperatingMode},,,,,,,,,,,,,,,,,,,,,,,
